@@ -1,0 +1,47 @@
+spring:
+  datasource:
+    master:
+      username: sa
+      password:
+      url: jdbc:h2:mem:testdb;DATABASE_TO_UPPER=false;DB_CLOSE_DELAY=-1
+      driver-class-name: org.h2.Driver
+    slave:
+      username: sa
+      password:
+      url: jdbc:h2:mem:testdb;DATABASE_TO_UPPER=false;DB_CLOSE_DELAY=-1
+      driver-class-name: org.h2.Driver
+  jpa:
+    open-in-view: false
+    properties:
+      hibernate:
+        hbm2ddl:
+          auto: none
+        jdbc:
+          time_zone: UTC
+          batch_size: 200
+          batch_versioned_true: true
+        order_inserts: true
+        order_updates: true
+        enable_lazy_load_no_trans: true
+        default_batch_fetch_szie: 300
+        naming:
+          physical_strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
+          implicit_strategy: org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy
+        dialect: org.hibernate.dialect.H2Dialect
+        ddl-auto: create-drop
+        show_sql: false
+        format_sql: true
+        generate-ddl: true
+    defer-datasource-initialization: true
+  h2:
+    console:
+      enabled: true
+kakao:
+  base_url: https://dapi.kakao.com
+  access_token: ea336718b1bb641ac29cb41e7edccdd2
+naver:
+  base_url: https://openapi.naver.com
+  client_id: LS4FDz268NTigqutqQY9
+  client_secret: bQd4i7qGon
+server:
+  port: 8201
