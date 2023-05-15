@@ -38,10 +38,10 @@ spring:
       enabled: true
 kakao:
   base_url: https://dapi.kakao.com
-  access_token: ea336718b1bb641ac29cb41e7edccdd2
+  access_token: asdfasdf
 naver:
   base_url: https://openapi.naver.com
-  client_id: LS4FDz268NTigqutqQY9
-  client_secret: bQd4i7qGon
+  client_id: asdfasdf
+  client_secret: saasdfasdf
 server:
   port: 8201
