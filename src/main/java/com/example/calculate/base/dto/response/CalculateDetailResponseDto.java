@@ -1,5 +1,6 @@
 package com.example.calculate.base.dto.response;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.PropertyNamingStrategies;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
 import lombok.Data;
@@ -10,6 +11,7 @@ import java.time.LocalDateTime;
 
 @Data
 @JsonNaming(value = PropertyNamingStrategies.SnakeCaseStrategy.class)
+@JsonInclude(JsonInclude.Include.NON_NULL)
 @Accessors(chain = true)
 public class CalculateDetailResponseDto {
     private Long calculateDetailId;
