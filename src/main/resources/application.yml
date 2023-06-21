@@ -36,12 +36,5 @@ spring:
   h2:
     console:
       enabled: true
-kakao:
-  base_url: https://dapi.kakao.com
-  access_token: asdfasdf
-naver:
-  base_url: https://openapi.naver.com
-  client_id: asdfasdf
-  client_secret: saasdfasdf
 server:
   port: 8201
