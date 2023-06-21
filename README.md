@@ -65,6 +65,6 @@
 --------------
 ### BatchService 
   - multi node로 구성 대비하여 redis 분산 락 처리 가능
-  - 미정산 리마인드 알림을 위해 fixedDelay 20분 설정 및 config값을 사용하여 배치 서비스 중단 가능
+  - 미정산 리마인드 알림을 위해 fixedDelay 1분 설정 및 config값을 사용하여 배치 서비스 중단 가능
 
 
