@@ -236,15 +236,17 @@ public class CalculateService {
     @Transactional
     public void unsettledNotify() {
         List<CalculateResponseModel> list = calculateInfoQueryRepository.findAllAndNotify();
+        List<CalculateDetailEntity> detailList = new ArrayList<>();
         list.forEach(l -> {
             // 유저마다 푸시 진행
             pushClient.push();
             CalculateDetailEntity detail =
                     calculateDetailRepository.getById(l.getCalculateDetailId())
                             .setNotifySendAt(LocalDateTime.now());
-            calculateDetailRepository.save(detail);
-        });
+            detailList.add(detail);
 
+        });
+        calculateDetailRepository.saveAll(detailList);
     }
 
 
