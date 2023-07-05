@@ -113,7 +113,8 @@ public class FileService {
     }
 
     public GetVideoProgressResDto getVideoProgressInfo(Long id) {
-        String percent = redisUtil.getConvertVideoProgressPercent(id);
+        String percent = redisUtil.getConvertVideoProgressPercent(id).orElseThrow(
+                () -> new UnprocessableException(ErrorCode.DEMO_FILE_NOT_FOUND));
         return new GetVideoProgressResDto()
                 .setId(id)
                 .setProgress(percent + "%");

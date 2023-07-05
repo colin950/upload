@@ -6,6 +6,8 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.stereotype.Component;
 
+import java.util.Optional;
+
 @Component
 public class RedisUtil {
 
@@ -35,8 +37,8 @@ public class RedisUtil {
 		setRedisData(data);
 	}
 
-	public String getConvertVideoProgressPercent(Long id) {
-		return redisTemplate.opsForValue().get(setConvertVideoProgressPercentKey + id);
+	public Optional<String> getConvertVideoProgressPercent(Long id) {
+		return Optional.ofNullable(redisTemplate.opsForValue().get(setConvertVideoProgressPercentKey + id));
 	}
 
 	
