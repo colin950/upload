@@ -38,7 +38,7 @@ dependencies {
     implementation 'io.netty:netty-resolver-dns-native-macos:4.1.68.Final:osx-aarch_64'
 
     // redis
-//    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-data-redis'
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-data-redis'
 
 
     // H2 Database
@@ -75,6 +75,9 @@ dependencies {
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 //	testImplementation 'io.projectreactor:reactor-test'
 
+    // ffmpeg
+    implementation("net.bramp.ffmpeg:ffmpeg:0.7.0")
+
     // 외부 라이브러리를 넣어서 사용하게 되어야 될경우 자동 컴파일
     compileOnly fileTree(dir: 'libs', include: ['*.jar'])
 }
@@ -90,7 +93,7 @@ def queryDslGenerated = "src/main/generated"
 sourceSets {
     main.resources.srcDirs = [
             "src/main/resources",
-            "src/main/resources-${profile}"
+//            "src/main/resources-${profile}"
     ]
     main.java.srcDirs += [queryDslGenerated]
 }

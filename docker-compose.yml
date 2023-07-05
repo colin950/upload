@@ -1,0 +1,54 @@
+version: '3.7'
+services:
+#  ffmpeg:
+#    container_name: ffmpeg
+#    image: jrottenberg/ffmpeg
+#    #tty: true
+#    networks:
+#      - internal-network
+#    ports:
+#      - "29002:29000"
+#    tty: true
+#    entrypoint: "bash"
+  cache:
+    container_name: redis
+    image: redis:alpine
+    ports:
+      - 6379:6379
+    networks:
+      - internal-network
+#  db:
+#    container_name: h2
+#    image: oscarfonts/h2:latest
+#    ports:
+#      - 1521:1521
+#      - 8081:81
+#    environment:
+#      H2_OPTIONS: -ifNotExists
+#    networks:
+#      - internal-network
+#    volumes:
+#      - ./h2/:/opt/h2-data
+#  application:
+#    container_name: server-start
+#    volumes:
+#      - ./:/app
+#    build: .
+##    command: java -jar app.jar
+#    ports:
+#      - "8201:8201"
+#    environment:
+#      SPRING_DATASOURCE_URL: jdbc:h2:tcp://h2:1521/demo
+#      SPRING_DATASOURCE_USERNAME: sa
+#      SPRING_DATASOURCE_PASSWORD:
+#    depends_on:
+#      - db
+#      - cache
+#      - ffmpeg
+#    networks:
+#      - internal-network
+
+
+networks:
+  internal-network:
+    driver: bridge

@@ -36,5 +36,17 @@ spring:
   h2:
     console:
       enabled: true
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
+  data:
+    redis:
+      host: 127.0.0.1
+      port: 6379
+
+ffmpeg:
+  mpeg: /ffmpeg/bin/ffmpeg
+  probe: /ffmpeg/bin/ffprobe
 server:
   port: 8201
